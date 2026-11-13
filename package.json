@@ -1,0 +1,9 @@
+{
+  "name": "bleep-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first procedural game sound pack generator. No backend. No dependencies.",
+  "scripts": { "start": "node server.cjs", "test": "node --test tests/engine.test.cjs" },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}

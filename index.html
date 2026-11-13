@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#141614">
+  <meta name="description" content="Create a cohesive game sound pack in your browser. 54 procedural sounds, real-time controls, WAV and ZIP exports. No account, API or backend.">
+  <title>Bleep Studio — Small sounds. Big game energy.</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#library" data-label="skip">跳转到音效库</a>
+  <header class="topbar">
+    <a href="#" class="brand" aria-label="Bleep Studio home"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>bleep<span class="brand-small">studio</span><span class="version">v1.0</span></a>
+    <div class="header-right"><span class="local-badge"><i></i><span data-t="local"></span></span><button id="language" class="text-button" aria-label="Switch to English" aria-pressed="false">EN</button><button id="help" class="icon-button" data-label="help" aria-label="帮助"><span data-icon="help"></span></button></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div><div class="eyebrow"><span class="tiny-line"></span> THE LITTLE GAME AUDIO LAB</div><h1 id="hero-title">Small sounds.<br><span>Big game energy.</span></h1><p data-t="intro"></p></div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="sound-object"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="art-tag tag-one">100% YOUR VIBE</span><span class="art-tag tag-two">SOUND ON. WORLD OFF.</span><span class="art-cross">+</span></div>
+    </section>
+    <section class="style-section" aria-labelledby="style-label"><div class="section-label"><span id="style-label" data-t="chooseStyle"></span><span class="mono">01 / 03</span></div><div id="styles" class="style-grid"></div></section>
+    <div class="workspace">
+      <section id="library" class="library" aria-labelledby="library-title" tabindex="-1">
+        <div class="library-heading"><div><h2 id="library-title" data-t="library"></h2><span id="sound-count" class="muted"></span></div><button id="playground-open" class="outline-button"><span data-icon="game"></span><span data-t="playground"></span><span aria-hidden="true">↗</span></button></div>
+        <div class="library-tools"><div id="categories" class="categories" role="group" data-label="categories" aria-label="音效类别"></div><label class="search-box"><span data-icon="search"></span><input id="search" type="search" data-placeholder="search" data-label="search" aria-label="搜索音效" autocomplete="off"><kbd>/</kbd></label></div>
+        <div id="sound-grid" class="sound-grid"></div>
+        <div id="empty" class="empty" hidden><span data-icon="search"></span><p data-t="noSounds"></p><button id="clear-search" class="outline-button" data-t="clear"></button></div>
+        <div class="library-foot"><span><kbd>1</kbd>–<kbd>9</kbd> <span data-t="quickPlay"></span></span><span><kbd>Space</kbd> <span data-t="replay"></span></span><span><kbd>M</kbd> <span data-t="mute"></span></span></div>
+      </section>
+      <aside class="editor" aria-labelledby="editor-label">
+        <div class="editor-top"><span id="editor-label" class="eyebrow" data-t="soundEditor"></span><span class="live-label"><i></i> LIVE</span></div>
+        <div class="editor-name"><div id="editor-symbol" class="sound-symbol"></div><div><h2 id="editor-title"></h2><span id="editor-filename" class="mono muted"></span></div><button id="favorite" class="icon-button" data-label="favorite" aria-label="收藏" aria-pressed="false"><span data-icon="star"></span></button></div>
+        <div class="wave-panel"><div class="wave-caption"><span id="wave-status">WAVEFORM</span><span id="wave-duration"></span></div><canvas id="waveform" width="640" height="220" role="img" data-label="waveform" aria-label="当前音效波形"></canvas><div class="wave-axis"><span>0.00 s</span><span>MONO / 16-BIT</span></div></div>
+        <button id="play" class="play-button"><span data-icon="play"></span><span data-t="playSound"></span><kbd>↵</kbd></button>
+        <div id="controls" class="controls"></div>
+        <div class="variation-row"><span class="muted" data-t="variation"></span><span id="seed-value" class="mono"></span><button id="randomize" class="outline-button"><span data-icon="shuffle"></span><span data-t="shuffle"></span></button><button id="reset" class="icon-button" data-label="reset" aria-label="重置当前音效"><span data-icon="reset"></span></button></div>
+        <div class="export-settings"><label for="sample-rate" data-t="quality"></label><select id="sample-rate"><option value="44100">44.1 kHz · WAV</option><option value="48000">48 kHz · WAV</option></select></div>
+        <button id="download-wav" class="outline-button download-single"><span data-icon="download"></span><span data-t="downloadWav"></span></button>
+      </aside>
+    </div>
+    <section class="pack-banner"><div class="pack-icon" data-icon="package"></div><div class="pack-copy"><h2 data-t="packTitle"></h2><p data-t="packDescription"></p></div><button id="download-pack" class="primary-button"><span data-icon="download"></span><span data-t="exportPack"></span><span class="button-tag">.ZIP</span></button></section>
+  </main>
+  <footer><span>bleep studio <span class="footer-dot">·</span> <span data-t="footer"></span></span><div class="footer-right"><button id="mute" class="text-button" aria-pressed="false"><span data-icon="volume"></span><span id="mute-label"></span></button><label class="volume-label"><span class="sr-only" data-t="volume"></span><input id="volume" type="range" min="0" max="100" value="65" data-label="volume" aria-label="试听音量"></label></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="playground"><div class="dialog-heading"><div><span class="eyebrow">SOUND CHECK</span><h2 data-t="playgroundTitle"></h2></div><button class="icon-button close-dialog" data-label="close" aria-label="关闭"><span data-icon="close"></span></button></div><p data-t="playgroundDescription"></p><div class="game-scene" id="game-scene"><span class="scene-sun"></span><span class="scene-cloud c1"></span><span class="scene-cloud c2"></span><div class="scene-hills"></div><span class="scene-coin" aria-hidden="true">✦</span><div id="player" class="pixel-player"><i></i></div><div class="scene-ground"></div><span class="scene-label">LITTLE WORLD / BIG SOUNDS</span><output id="score">0000</output><span id="scene-feedback" aria-live="polite"></span></div><div id="game-actions" class="game-actions"></div><p class="dialog-note" data-t="gameNote"></p></dialog>
+  <dialog id="help-dialog"><div class="dialog-heading"><h2 data-t="helpTitle"></h2><button class="icon-button close-dialog" data-label="close" aria-label="关闭"><span data-icon="close"></span></button></div><div id="help-content"></div></dialog>
+  <noscript>Bleep Studio needs JavaScript enabled for local audio synthesis.</noscript>
+</body>
+</html>

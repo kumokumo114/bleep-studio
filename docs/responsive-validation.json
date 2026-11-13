@@ -1,0 +1,30 @@
+[
+  {
+    "width": 375,
+    "scrollWidth": 360,
+    "pass": true,
+    "sounds": 18,
+    "columns": "102.667px 102.667px 102.667px"
+  },
+  {
+    "width": 768,
+    "scrollWidth": 753,
+    "pass": true,
+    "sounds": 18,
+    "columns": "185.833px 185.833px"
+  },
+  {
+    "width": 1024,
+    "scrollWidth": 1009,
+    "pass": true,
+    "sounds": 18,
+    "columns": "313.833px 313.833px"
+  },
+  {
+    "width": 1440,
+    "scrollWidth": 1425,
+    "pass": true,
+    "sounds": 18,
+    "columns": "302px 302px 302px"
+  }
+]

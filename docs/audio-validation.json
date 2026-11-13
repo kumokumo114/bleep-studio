@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "renders": 216,
+  "catalogSounds": 54,
+  "sampleRates": [
+    44100,
+    48000
+  ],
+  "lowestPeak": 0.0207566749304533,
+  "highestPeak": 0.6386289596557617,
+  "repeatMaxError": 0,
+  "seedVariation": 359.2762630093745
+}
